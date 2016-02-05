@@ -13,7 +13,7 @@ plot3 <- function()
     dt %>% mutate(
         DateTime = parse_date_time(
             sprintf('%s %s',as.character(Date), as.character(Time)), 
-            "dmy HMS"
+            "dmy HMS", tz="Europe/Rome"
         )) %>% 
         filter(DateTime >= '2007-02-01 00:00:00' & DateTime <= '2007-02-02 23:59:59' ) %>% 
         mutate(Sub_metering_1_num = as.numeric(as.character(Sub_metering_1)),
